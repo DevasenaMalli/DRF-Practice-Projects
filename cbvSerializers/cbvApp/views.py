@@ -7,14 +7,17 @@ from rest_framework.views import APIView
 from django.http import Http404
 from rest_framework import generics,mixins
 from rest_framework import viewsets
-
+from rest_framework.pagination import PageNumberPagination,LimitOffsetPagination
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 
 
 class StudentViewSets(viewsets.ModelViewSet):
       queryset = Student.objects.all() 
       serializer_class = StudentSerializer
-
-
+      pagination_class = LimitOffsetPagination
+      filter_backends =[filters.OrderingFilter]
+      ordering_fields = ['score','name']
 
 # class StudentList(generics.ListCreateAPIView):
 #       queryset = Student.objects.all() 
