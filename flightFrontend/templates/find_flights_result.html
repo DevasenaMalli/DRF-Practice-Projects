@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Search Results</title>
+</head>
+<body>
+    <h2>Flight Search Results:</h2>
+    <ul>
+        {% if flights %}
+         {% for flight in flights %}
+            <li>
+                Flight Number: {{ flight.flightNumber }}<br>
+                Operating Airline: {{ flight.operatingAirline }}<br>
+                Departure City: {{ flight.departureCity }}<br>
+                Arrival City: {{ flight.arrivalCity }}<br>
+                Date of Departure: {{ flight.dateOfDeparture }}<br>
+                Estimated Time of Departure: {{ flight.estimatedTimeOfDeparture }}<br>
+            </li>
+         {% endfor %}
+        {% else %}
+           <li> No flights found.</li>
+        {% endif %}
+
+    </ul>
+</body>
+</html>

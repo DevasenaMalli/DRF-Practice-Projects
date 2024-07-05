@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+
+    <!-- Include the all_flights template -->
+ 
+
+    <ul>
+        <!-- Correct URL name usage -->
+        <li><a href="{% url 'all_flights' %}">All flights</a></li>
+        <li><a href="{% url 'find_flights' %}">Find flight</a></li>
+        <li><a href="{% url 'find_flights_result' %}">Find flight result</a></li>
+
+        <li><a href="{% url 'reserve_flight' %}">Reserve flight</a></li>
+        <li><a href="{% url 'confirm_flight' %}">Confirm flight</a></li>
+    </ul>
+</body>
+</html>

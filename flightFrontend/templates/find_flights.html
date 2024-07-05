@@ -1,0 +1,24 @@
+
+
+
+<html>
+  <head>
+    <title>Find Flights</title>
+  </head>
+  <body>
+    <h2>Find Flights:</h2>
+
+    <form action="" method="post">
+      {% csrf_token %}
+      From: <input type="text" name = "departureCity" />
+      To: <input type="text" name = "arrivalCity" />
+      Departure Date: <input type="text" name = "dateOfDeparture" />
+      <input type="submit" name = "Search" />
+      
+    </form>
+
+    {% if error_message %}
+       <p>{{error_message}}</p>
+    {% endif %}
+  </body>
+</html>
